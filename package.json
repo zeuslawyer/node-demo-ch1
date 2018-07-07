@@ -1,0 +1,23 @@
+{
+  "name": "demo-ch1",
+  "version": "1.0.0",
+  "description": "tutorial app from 9 node projects",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeuslawyer/node-demo-ch1.git"
+  },
+  "keywords": [
+    "node",
+    "project"
+  ],
+  "author": "zubin pratap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeuslawyer/node-demo-ch1/issues"
+  },
+  "homepage": "https://github.com/zeuslawyer/node-demo-ch1#readme"
+}
