@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Whooshka Parking Restriction Form</title>
+  <meta name="description" content="Parking Form">
+  <meta name="Zubin Pratap" content="www.whooshka.me">
+
+  <!--  TODO NEED TO ADD STYLESHEET -->
+  <!--<link rel="stylesheet" href="css/">  -->
+
+  <!--[if lt IE 9]>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script> -->
+  <![endif]-->
+  
+</head>
+
+<body>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <section id = "headings">
+        <h1> THIS IS WHERE WE INPUT DATA RELATING TO A GIVEN PARKING AREA</h1>
+        <p> <i> Please follow the hint texts in each input box</i></p>
+        <br>
+    </section>
+
+    <section id = "form_section">
+
+        <!--REFERENCE:  https://stackoverflow.com/questions/41305051/how-do-i-make-a-firebase-form-->
+
+            <div>
+                <form id = "form_data" action = "#" >
+                        <fieldset> <br>
+                                <legend>Please enter the key parking restriction data</legend>
+                                <p>
+                                    <label for="profileID">Profile number - first profile is always "0"</label>
+                                    <input type="text" id="profileID" name="profileID" placeholder="enter number" value="" >
+                                </p>
+
+                                <p>
+                                        <label for="general_desc">Choose the general description from dropdown</label> <br>
+                                        <select id="general_desc" name="general_desc">
+                                                <option value="Parking">Parking</option>
+                                                <option value="permit_zone">Permit Zone</option>
+                                                <option value="clearWay_no_stopping">Clearway/No Stopping</option>
+                                                <option value="loading_zone">Loading Zone</option>
+                                                <option value="unknown">Unknown</option>
+                                                <option value="Disabled Parking">Disabled Parking</option>
+                                        </select>
+                                </p>
+
+
+                                <!--This should be extracted from the image by reverse geocoding-->
+                                <p>
+                                    <label for = "street_name">Enter the Street Name </label><br>
+                                    <input type = "text" name = "street_name" id = "street_name" placeholder="___ Street" value = "">
+                                </p>
+                                
+                                <p>
+                                    <label for="startTime">Start time entered in HH:MM format, 24 hours format</label> <br>
+                                    <input type="text" name="startTime" id="startTime" placeholder="enter in 24 hours format" value = "">
+                                </p>
+                                <p>
+                                    <label for="endTime">End time of in 24 hour HH:MM format </label> <br>
+                                    <input type="text" name="endTime" id="endTime" placeholder="enter in 24 hours format" value="">
+                                </p>
+                                <p>
+                                    <label for="durationInMins">How many minutes parking is allowed for</label>  <br>
+                                    <input type="text" name="durationInMins" id="durationInMins" placeholder="minutes here, not hours" value="">
+                                </p>
+                                <p>
+                                    <label for="costPerHour">Enter the costs in cents</label>  <br>
+                                    <input type="text" name="costPerHour" id="costPerHour" placeholder="ensure cents not dollars" value="00">
+                                </p>
+                                
+                        </fieldset> <br>
+
+                        <fieldset> <br>
+                            <legend> Please select which days the above restriction applies to </legend>
+
+                                <p>
+                                        <input type="checkbox" name="weekends" id="weekends" value="">
+                                        <label for="weekends">Saturday + Sunday?</label>
+                                </p>
+                                <p>
+                                        <input type="checkbox" name="weekdays" id="weekdays" value="" >
+                                        <label for="weekdays">Monday to Friday?</label>
+                                </p>
+
+                                <p>
+                                    <input type="checkbox" name="monday" id="monday" >
+                                    <label for="monday"> Monday?</label>
+                                </p>
+                                
+                                <p>  
+                                    <input type="checkbox" name="tuesday" id="tuesday" >
+                                    <label for="tuesday">Tuesday?</label>
+                                </p> 
+                                <p>
+                                    <input type="checkbox" name="wednesday" id="wednesday" >
+                                    <label for="wednesday">Wednesday?</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="thursday" id="thursday" >
+                                    <label for="thursday">Thursday?</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="friday" id="friday" >
+                                    <label for="friday"> Friday?</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="saturday" id="saturday" >
+                                    <label for="saturday"> Saturday?</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="saturday" id="sunday" >
+                                    <label for="sunday"></label> Sunday?</label>
+                                </p>
+                                
+                        </fieldset>
+
+                        <fieldset> <br>
+                                <legend> Please check the additional data </legend>
+                                <p>
+                                    <br> <label for="onPublicHoliday"></label> Does this profile appy on public holidays?</label><br>
+                                    <input type="checkbox" name="onPublicHoliday" id="onPublicHoliday" >
+                                </p>
+                                <p>
+                                        <br> <label for="ticket"></label> Metered or Ticketed?</label><br>
+                                        <input type="checkbox" name="ticket" id="ticket" >
+                                </p>
+                                <p>
+                                        <br> <label for="disabled"></label> Disabled Parking allowed during this time?</label><br>
+                                        <input type="checkbox" name="disabled" id="disabled" >
+                                </p>
+
+                        </fieldset>
+
+                        <button type="button" id="add_profile">Add Profile</button>
+                        <input type="submit" id="submit_button">
+                        <button type="reset" id="reset_button"> RESET </button>
+                <!-- <input type="submit_button2" value="Add another profile" -->
+                            
+                </form>
+            </div>
+    </section>
+
+                
+    
+
+
+  <script src="formData.js"></script>
+    
+</body>
+</html>
