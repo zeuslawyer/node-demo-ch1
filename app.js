@@ -7,7 +7,8 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use('/', routes);
+app.use('/', routes);  // this refers to ROUTES folder which contains all the routes handlers/middleware. encapsulates & modularises
+
 
 module.exports = app;
 

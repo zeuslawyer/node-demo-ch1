@@ -4,7 +4,7 @@ const router = express.Router();
 
 //middleware aka handler for the default index '/' path aka route
 router.get('/', (req, res, nex) => {
-    res.send('If you\'re seeing this you\'re golden, mate!');
+    res.render('form'); // render the file layout in the /views folder
 });
 
 module.exports = router;
