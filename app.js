@@ -3,8 +3,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/index');
 
-
-
 const app = express();
 
 //configure settings to include pug & views folder path  - see also https://expressjs.com/en/guide/using-template-engines.html

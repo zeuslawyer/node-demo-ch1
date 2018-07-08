@@ -5,12 +5,12 @@ const {body, validationResult} = require('express-validator/check');
 
 //middleware aka handler for the default index '/' path aka route
 
-//get
+//get /
 router.get('/', (req, res, nex) => {
     res.render('form',  {title: 'Registration',  }); // render the file layout called 'form' in the /views folder
 });
 
-//get
+//get /parking
 router.get('/parking', (req, res, nex) => {
     res.sendFile('/Users/zubinpratap/Documents/DevProjects/Practice_Projects/WebDevTutes/node-demo-ch1/views/ParkingForm.html'); 
 });
@@ -31,7 +31,7 @@ router.post('/',
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      res.send('Thank you for your registration!');
+      res.send('Thank you - we got your form details.');
     } else {
       res.render('form', {
         title: 'Registration form',
