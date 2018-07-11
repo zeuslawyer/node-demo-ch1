@@ -4,18 +4,14 @@ const mongoose = require('mongoose');
 
 const router = express.Router();
 const Registration = mongoose.model('Registration'); // retrieve the model
-var testObj;
+
 
 //middleware aka handler for the default index '/' path aka route
 //get /
-router.get('/', (req, res, nex) => {
+router.get('/', (req, res, next) => {
     res.render('form',  {title: 'Registration Form',  }); // render the file layout called 'form' in the /views folder
 });
 
-//get /parking
-router.get('/parking', (req, res, nex) => {
-    res.sendFile('/Users/zubinpratap/Documents/DevProjects/Practice_Projects/WebDevTutes/node-demo-ch1/views/ParkingForm.html'); 
-});
 
 //post
 router.post('/',
@@ -33,11 +29,11 @@ router.post('/',
     const errors = validationResult(req);
         // no errors
     if (errors.isEmpty()) {
-      const registration = new Registration(req.body);  //create a Registration object of type Model
+      const registration = new Registration(req.body);  //create a Registration object of type Model, pass it data from the form
       registration.save()
         .then( () => { res.send('Thank you for your registration!'); })
         .catch( () => { res.send('Sorry! Something went wrong.'); });
-        // errors
+        // has errors
       } else {
       res.render('form', {
         title: 'Form - ERRORS',
