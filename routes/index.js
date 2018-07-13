@@ -1,18 +1,9 @@
 const express = require('express');
 const {body, validationResult} = require('express-validator/check');
 const mongoose = require('mongoose');
-const path = require('path');
-const auth = require ('http-auth');
 
 const router = express.Router();
 const Registration = mongoose.model('Registration'); // retrieve the model
-
-
-//point auth to file that contains login+pwd which is in the ROOT folder
-const basic = auth.basic({
-  file: path.join(__dirname, '../users.htpasswd'),
-});
-
 
 //middleware aka handler for the default index '/' path aka route
 //get /
@@ -51,5 +42,6 @@ router.post('/',
     }
   }
 );
+
 
 module.exports = router;
