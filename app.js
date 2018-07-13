@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routes); 
 app.use('/parking', parkingForm);
 app.use('/registrations', reg);
+app.use(express.static('public'));
 
 //error 404 handling - reference: https://expressjs.com/en/starter/faq.html
 app.use(function (req, res, next) {

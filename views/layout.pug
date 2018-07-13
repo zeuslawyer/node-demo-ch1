@@ -2,13 +2,15 @@ doctype html
 html
   head
     title= `${title}`
+    link(rel='stylesheet', href = '/css/boostrap.min.css')
+    link(rel='stylesheet', href = '/css/styles.css')
 
   body
     .navbar 
       ul
         li
           a(href='/logout') Logout
-    .heading
+    div.container.listing-reg
       h1 Node Chapter 1 Test App!
 
     
