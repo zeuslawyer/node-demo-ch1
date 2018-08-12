@@ -1,6 +1,8 @@
 const express = require('express');
 const {body, validationResult} = require('express-validator/check');
 const mongoose = require('mongoose');
+const schema = require('../models/Registration.js')
+
 
 const router = express.Router();
 const Registration = mongoose.model('Registration'); // retrieve the model
@@ -14,7 +16,7 @@ router.get('/', (req, res, next) => {
 
 //post
 router.post('/',
-  //apply client side VALIDATION on the req.body's two properties - name and email - with this array of handler methods from express-validator
+  //apply server side VALIDATION on the req.body's two properties - name and email - with this array of handler methods from express-validator
   [
     body('name')
       .isLength({ min: 5 })

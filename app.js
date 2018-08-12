@@ -16,6 +16,7 @@ app.set('view engine', 'pug');
 
 //middleware routing
 app.use(bodyParser.urlencoded({extended: true}));
+  //mount the routers to paths
 app.use('/', routes); 
 app.use('/parking', parkingForm);
 app.use('/registrations', reg);

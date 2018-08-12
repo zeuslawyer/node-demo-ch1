@@ -1,8 +1,7 @@
-require('./models/Registration');
-const app = require('./app');
+// require('./models/Registration');
+// 
 require ('dotenv').config();
 const mongoose = require('mongoose');
-
 
 mongoose.connect(process.env.DATABASE, { useMongoClient: true });
 mongoose.Promise = global.Promise;
@@ -14,7 +13,8 @@ mongoose.connection
     console.log(`Connection error: ${err.message}`);
   });
 
-
-const server = app.listen(3000, () => {
-    console.log(`server is now running on port ${server.address().port}`);
+  const app = require('./app');
+ const server = app.listen(3000, () => {
+   console.log(`server is now running on port ${server.address().port}`);
 });
+  
